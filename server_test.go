@@ -2,6 +2,8 @@ package main
 
 import (
 	"encoding/json"
+	"net/http"
+	"net/http/httptest"
 	"testing"
 	"time"
 
@@ -129,4 +131,82 @@ func TestStartWebSocketServer_BroadcastToAllActiveClients(t *testing.T) {
 	assertEqual(t, string(got1), string(payload))
 	assertEqual(t, string(got2), string(payload))
 	assertEqual(t, string(got3), string(payload))
+}
+
+func TestStartWebSocketServer_RemovesClientWhenSendWouldBlock(t *testing.T) {
+	clientManager := getClientManagerAndStartWebSocketServer()
+
+	stalled := &Client{Id: "stalled", Socket: &websocket.Conn{}, Send: make(chan []byte)}
+	clientManager.Register <- stalled
+
+	deadline := time.Now().Add(2 * time.Second)
+	for {
+		if clientManager.Clients[stalled] {
+			break
+		}
+		if time.Now().After(deadline) {
+			t.Fatalf("client was not registered in time")
+		}
+		time.Sleep(50 * time.Millisecond)
+	}
+
+	clientManager.Broadcast <- []byte("payload")
+
+	// Poll until the channel is closed or the client is removed.
+	waitDeadline := time.Now().Add(2 * time.Second)
+	closed := false
+	for time.Now().Before(waitDeadline) {
+		select {
+		case _, ok := <-stalled.Send:
+			if !ok {
+				closed = true
+				break
+			}
+		default:
+		}
+		if _, exists := clientManager.Clients[stalled]; !exists {
+			closed = true
+			break
+		}
+		time.Sleep(5 * time.Millisecond)
+	}
+
+	if !closed {
+		t.Fatalf("expected stalled client's Send channel to be closed and client removed after broadcast")
+	}
+
+	if _, exists := clientManager.Clients[stalled]; exists {
+		t.Fatalf("expected stalled client to be removed from manager after failed send")
+	}
+}
+
+func TestSend_SkipsCurrentClient(t *testing.T) {
+	clientManager := NewClientManager()
+
+	current := &Client{Id: "sender", Socket: &websocket.Conn{}, Send: make(chan []byte, 1)}
+	other := &Client{Id: "other", Socket: &websocket.Conn{}, Send: make(chan []byte, 1)}
+
+	clientManager.Clients[current] = true
+	clientManager.Clients[other] = true
+
+	msg := []byte("hello")
+	clientManager.send(msg, current)
+
+	if got, ok := receiveWithTimeout(t, other.Send); !ok || string(got) != string(msg) {
+		t.Fatalf("expected other to receive message")
+	}
+
+	if _, ok := receiveWithTimeout(t, current.Send); ok {
+		t.Fatalf("expected current client to not receive its own message")
+	}
+}
+
+func TestWebsocketPage_ReturnsNotFoundOnUpgradeFailure(t *testing.T) {
+	clientManager := NewClientManager()
+	req := httptest.NewRequest("GET", "/ws", nil)
+	rr := httptest.NewRecorder()
+
+	clientManager.WebsocketPage(rr, req)
+
+	assertEqual(t, http.StatusBadRequest, rr.Code)
 }

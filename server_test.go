@@ -210,3 +210,15 @@ func TestWebsocketPage_ReturnsNotFoundOnUpgradeFailure(t *testing.T) {
 
 	assertEqual(t, http.StatusBadRequest, rr.Code)
 }
+
+func TestSend_OnlySelfNoDelivery(t *testing.T) {
+	clientManager := NewClientManager()
+	self := &Client{Id: "self", Socket: &websocket.Conn{}, Send: make(chan []byte, 1)}
+	clientManager.Clients[self] = true
+
+	clientManager.send([]byte("msg"), self)
+
+	if _, ok := receiveWithTimeout(t, self.Send); ok {
+		t.Fatalf("sender should not receive its own message")
+	}
+}

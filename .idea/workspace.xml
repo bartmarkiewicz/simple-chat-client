@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Fixed duplicate messages (double ws connection :eh:)">
-      <change afterPath="$PROJECT_DIR$/server_test.go" afterDir="false" />
+    <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Add some more tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
     "Go Build.go build simpleChatClient.executor": "Debug",
     "Go Test.TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient.executor": "Debug",
     "Go Test.TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient.executor": "Run",
-    "Go Test.server_test.go.executor": "Run",
+    "Go Test.server_test.go.executor": "Coverage",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.GoLinterPluginOnboarding": "true",
     "RunOnceActivity.GoLinterPluginStorageMigration": "true",
@@ -182,7 +182,9 @@
     <MESSAGE value="Fixed duplicate messages (double ws connection :eh:)" />
     <MESSAGE value="Simple web socket server" />
     <MESSAGE value="Simple web socket server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simple web socket server" />
+    <MESSAGE value="Add some tests" />
+    <MESSAGE value="Add some more tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some more tests" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
@@ -214,6 +216,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/simpleChatClient$server_test_go.out" NAME="server_test.go Coverage Results" MODIFIED="1759077823915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/simpleChatClient$server_test_go.out" NAME="server_test.go Coverage Results" MODIFIED="1759078833477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

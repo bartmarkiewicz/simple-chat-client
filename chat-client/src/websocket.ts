@@ -24,7 +24,7 @@ export function useWebSocketConnection(url = "ws://localhost:12345/ws") {
     };
 
     ws.onmessage = (evt: MessageEvent) => {
-      console.log(JSON.stringify(evt.data));
+      console.log(evt.data.content);
       if (evt.data) {
         const chatMessage = JSON.parse(evt.data) as ChatMessage;
         messages.value.push(chatMessage);

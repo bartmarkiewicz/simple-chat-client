@@ -8,44 +8,34 @@
     </ul>
 
     <form @submit.prevent="sendChatMessage" class="form-input" v-if="connectionReady">
-      <input
-        v-model="chatBox"
-        autocomplete="off"
-        placeholder="Type a message..."
-      />
+      <input v-model="chatBox" autocomplete="off" placeholder="Type a message..." />
       <button type="submit">Send</button>
     </form>
-    <div v-else-if="!connectionReady && !connectionError">
-      Connecting...
-    </div>
-    <div v-else>
-      Connection Error Please Refresh Page
-    </div>
+    <div v-else-if="!connectionReady && !connectionError">Connecting...</div>
+    <div v-else>Connection Error Please Refresh Page</div>
   </section>
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue";
-import {type ChatMessage, useWebSocketConnection} from "@/websocket.ts";
+import { ref } from 'vue'
+import { type ChatMessage, useWebSocketConnection } from '@/websocket.ts'
 
-const { connectionReady, connectionError, messages, send }
-  = useWebSocketConnection("ws://localhost:8080/ws");
+const { connectionReady, connectionError, messages, send } =
+  useWebSocketConnection('ws://localhost:8080/ws')
 
-const chatBox = ref("");
+const chatBox = ref('')
 
 function sendChatMessage() {
-  const text = chatBox.value.trim();
-  if (!text) return;
+  const text = chatBox.value.trim()
+  if (!text) return
   const chatMessage: ChatMessage = {
     text,
-    role: "USER",
-    sender: "You"
+    role: 'USER',
+    sender: 'You',
   }
-  send(chatMessage);
-  chatBox.value = "";
+  send(chatMessage)
+  chatBox.value = ''
 }
-
-
 </script>
 
 <style scoped>

@@ -3,7 +3,6 @@
     <ul id="messages">
       <li v-for="(message, idx) in messages" :key="idx">
         <strong> Sender: {{ message.sender }}</strong>
-        {{message.text}}
         <div :class="{ system: message.role === 'SYSTEM' }">{{ message.text }}</div>
       </li>
     </ul>
@@ -40,6 +39,7 @@ function sendChatMessage() {
   const chatMessage: ChatMessage = {
     text,
     role: "USER",
+    sender: "You"
   }
   send(chatMessage);
   chatBox.value = "";

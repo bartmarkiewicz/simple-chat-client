@@ -73,8 +73,12 @@ func (clientManager *ClientManager) StartWebSocketServer() {
 
 func (clientManager *ClientManager) send(message []byte, currentClient *Client) {
 	for client := range clientManager.Clients {
+
+		fmt.Printf("\nSending message to client from %v to %v\n", currentClient.Id, client.Id)
 		if client.Id != currentClient.Id {
 			client.Send <- message
+		} else {
+			fmt.Printf("Not sending because same client")
 		}
 	}
 }
@@ -99,10 +103,8 @@ func (client *Client) read(manager *ClientManager) {
 				return
 			}
 		}
-		fmt.Println("Received message : ", string(message))
 
 		jsonMessage, _ := json.Marshal(&Message{Sender: client.Id, Content: MessageContent{Text: string(message), Role: "USER"}})
-		fmt.Println("Received jsonMsg : ", string(jsonMessage))
 
 		manager.Broadcast <- jsonMessage
 	}

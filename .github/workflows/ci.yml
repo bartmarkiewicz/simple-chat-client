@@ -24,13 +24,19 @@ jobs:
         run: go test ./... -cover
 
       - name: Build Frontend
-        run: | 
-          cd chat-client 
-          npm install 
+        working-directory: chat-client
+        run: |
+          npm ci
           npm run build
+          npm run type-check
+          npm run lint
+          npm run format
 
       - name: Run E2E tests
-        run: npm run test:e2e
+        working-directory: chat-client
+        run: |
+          npx playwright install --with-deps
+          npm run test:e2e
 
       - name: Install gosec
         run: go install github.com/securego/gosec/v2/cmd/gosec@latest

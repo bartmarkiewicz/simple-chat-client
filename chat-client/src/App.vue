@@ -25,10 +25,10 @@
 </template>
 
 <script setup lang="ts">
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 import {type ChatMessage, useWebSocketConnection} from "@/websocket.ts";
 
-const { connectionReady, connectionError, messages, send, connect }
+const { connectionReady, connectionError, messages, send }
   = useWebSocketConnection("ws://localhost:8080/ws");
 
 const chatBox = ref("");
@@ -45,9 +45,6 @@ function sendChatMessage() {
   chatBox.value = "";
 }
 
-onMounted(() => {
-  connect()
-});
 
 </script>
 

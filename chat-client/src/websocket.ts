@@ -72,7 +72,6 @@ export function useWebSocketConnection(url = "ws://localhost:12345/ws") {
     connectionError,
     messages,
 
-    connect,
     send,
   };
 }

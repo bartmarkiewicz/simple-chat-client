@@ -59,7 +59,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/darkn/GolandProjects/simpleChatClient/main.go",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "junie.allowlist",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "C:\\Users\\darkn\\GolandProjects\\simpleChatClient\\chat-client\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -126,22 +126,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/server.go</url>
-          <line>153</line>
+          <line>155</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/server.go</url>
-          <line>148</line>
+          <line>150</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/server.go</url>
-          <line>144</line>
+          <line>146</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/server.go</url>
-          <line>142</line>
+          <line>144</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">

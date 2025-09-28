@@ -57,28 +57,17 @@ function sendChatMessage() {
   gap: 1rem;
 }
 
-#messages {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #e3e3e3;
-  border-radius: 8px;
-  min-height: 200px;
-  max-height: 50vh;
-  overflow: auto;
-}
-
-#messages li {
+li {
   padding: 8px 12px;
   border-bottom: 1px solid #f0f0f0;
 }
 
-#messages li:last-child {
+li:last-child {
   border-bottom: none;
 }
 
 .system {
-  font-weight: 700; /* System messages in bold */
+  font-weight: 700;
 }
 
 .form-input {

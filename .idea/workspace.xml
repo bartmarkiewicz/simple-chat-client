@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Add e2e test">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-client/public/favicon.ico" beforeDir="false" />
-    </list>
+    <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Add CI" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -188,7 +184,8 @@
     <MESSAGE value="Add some tests" />
     <MESSAGE value="Add some more tests" />
     <MESSAGE value="Add e2e test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add e2e test" />
+    <MESSAGE value="Add CI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add CI" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

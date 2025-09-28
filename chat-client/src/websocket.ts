@@ -63,7 +63,7 @@ export function useWebSocketConnection(url = "ws://localhost:12345/ws") {
   onMounted(connect);
 
   onBeforeUnmount(() => {
-    websocket.value?.close(1000, "Unmount");
+    websocket.value?.close(500, "Unmount");
   });
 
   return {

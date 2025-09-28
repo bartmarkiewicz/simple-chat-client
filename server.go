@@ -41,6 +41,21 @@ func NewClientManager() *ClientManager {
 	}
 }
 
+func (clientManager *ClientManager) WebsocketPage(res http.ResponseWriter, req *http.Request) {
+	connection, err := (&websocket.Upgrader{CheckOrigin: func(r *http.Request) bool { return true }}).Upgrade(res, req, nil)
+	if err != nil {
+		http.NotFound(res, req)
+		return
+	}
+
+	client := &Client{Id: uuid.NewV4().String(), Socket: connection, Send: make(chan []byte)}
+
+	clientManager.Register <- client
+
+	go client.read(clientManager)
+	go client.write()
+}
+
 func (clientManager *ClientManager) StartWebSocketServer() {
 	for {
 		select {
@@ -137,19 +152,4 @@ func (client *Client) write() {
 			}
 		}
 	}
-}
-
-func (clientManager *ClientManager) WebsocketPage(res http.ResponseWriter, req *http.Request) {
-	connection, err := (&websocket.Upgrader{CheckOrigin: func(r *http.Request) bool { return true }}).Upgrade(res, req, nil)
-	if err != nil {
-		http.NotFound(res, req)
-		return
-	}
-
-	client := &Client{Id: uuid.NewV4().String(), Socket: connection, Send: make(chan []byte)}
-
-	clientManager.Register <- client
-
-	go client.read(clientManager)
-	go client.write()
 }

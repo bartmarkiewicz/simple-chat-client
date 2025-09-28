@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Duplicate message fixing">
+    <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Fixed duplicate messages (double ws connection :eh:)">
+      <change afterPath="$PROJECT_DIR$/server_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server.go" afterDir="false" />
     </list>
@@ -16,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="TypeScript File" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
@@ -25,10 +26,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Duplicate message fixing" />
+        <option name="rewordedMessage" value="Duplicate message fixing" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="71a3885be92cf09c243bd7406d8331613bc5a3c3" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -41,6 +52,9 @@
   "keyToString": {
     "DefaultGoTemplateProperty": "Go File",
     "Go Build.go build simpleChatClient.executor": "Debug",
+    "Go Test.TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient.executor": "Debug",
+    "Go Test.TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient.executor": "Run",
+    "Go Test.server_test.go.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.GoLinterPluginOnboarding": "true",
     "RunOnceActivity.GoLinterPluginStorageMigration": "true",
@@ -65,7 +79,21 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\darkn\GolandProjects\simpleChatClient" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Test.server_test.go">
+    <configuration name="go build server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="simpleChatClient" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="simpleChatClient" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/server.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build simpleChatClient" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="simpleChatClient" />
       <working_directory value="$PROJECT_DIR$" />
@@ -75,8 +103,43 @@
       <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="simpleChatClient" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="simpleChatClient" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestStartWebSocketServer_BroadcastToAllActiveClients\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="simpleChatClient" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="simpleChatClient" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="simpleChatClient" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/server_test.go" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.server_test.go" />
+        <item itemvalue="Go Build.go build server.go" />
+        <item itemvalue="Go Test.TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient" />
+        <item itemvalue="Go Test.TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient" />
         <item itemvalue="Go Build.go build simpleChatClient" />
       </list>
     </recent_temporary>
@@ -116,7 +179,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Bug fixing" />
     <MESSAGE value="Duplicate message fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Duplicate message fixing" />
+    <MESSAGE value="Fixed duplicate messages (double ws connection :eh:)" />
+    <MESSAGE value="Simple web socket server" />
+    <MESSAGE value="Simple web socket server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simple web socket server" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
@@ -125,46 +191,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/server.go</url>
-          <line>155</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/server.go</url>
-          <line>150</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/server.go</url>
-          <line>146</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/server.go</url>
-          <line>144</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/main.go</url>
           <line>14</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/server.go</url>
-          <line>48</line>
+          <line>63</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/server.go</url>
-          <line>58</line>
+          <line>73</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/server.go</url>
-          <line>44</line>
+          <line>59</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/simpleChatClient$server_test_go.out" NAME="server_test.go Coverage Results" MODIFIED="1759077823915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

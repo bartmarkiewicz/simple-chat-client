@@ -94,10 +94,12 @@ func TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers(t *testing.T) {
 		t.Fatalf("expected SYSTEM role with non-empty text, got: %+v", msg)
 	}
 
-	select {
-	case _, ok := <-client2.Send:
+	for {
+		_, ok := <-client2.Send
 		if ok {
 			t.Fatalf("client2.Send should be closed after unregister")
+		} else {
+			return
 		}
 	}
 }
@@ -160,7 +162,6 @@ func TestStartWebSocketServer_RemovesClientWhenSendWouldBlock(t *testing.T) {
 		case _, ok := <-stalled.Send:
 			if !ok {
 				closed = true
-				break
 			}
 		default:
 		}

@@ -23,8 +23,11 @@ jobs:
       - name: Run Go Unit Tests
         run: go test ./... -cover
 
+      - name: Build Frontend
+        run: cd chat-client | npm install && npm run build
+
       - name: Run E2E tests
-        run: cd chat-client | npm run test:e2e
+        run: npm run test:e2e
 
       - name: Install gosec
         run: go install github.com/securego/gosec/v2/cmd/gosec@latest

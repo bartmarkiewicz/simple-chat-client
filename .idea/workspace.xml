@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Add CI" />
+    <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Test CI">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server_test.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,55 +49,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Go Build.go build simpleChatClient.executor&quot;: &quot;Debug&quot;,
-    &quot;Go Test.TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient.executor&quot;: &quot;Debug&quot;,
-    &quot;Go Test.TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient.executor&quot;: &quot;Run&quot;,
-    &quot;Go Test.server_test.go.executor&quot;: &quot;Coverage&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Playwright.vue.spec.ts.executor&quot;: &quot;Run&quot;,
-    &quot;Playwright.websocket chat relays messages between two clients.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.GoLinterPluginOnboarding&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.GoLinterPluginStorageMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/darkn&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/darkn/GolandProjects/simpleChatClient/main.go&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;junie.allowlist&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\darkn\\GolandProjects\\simpleChatClient\\chat-client\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.go build simpleChatClient.executor": "Debug",
+    "Go Test.TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient.executor": "Debug",
+    "Go Test.TestStartWebSocketServer_RemovesClientWhenSendWouldBlock in simpleChatClient.executor": "Run",
+    "Go Test.TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient.executor": "Run",
+    "Go Test.server_test.go (1).executor": "Run",
+    "Go Test.server_test.go.executor": "Coverage",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Playwright.vue.spec.ts.executor": "Run",
+    "Playwright.websocket chat relays messages between two clients.executor": "Debug",
+    "RunOnceActivity.GoLinterPluginOnboarding": "true",
+    "RunOnceActivity.GoLinterPluginStorageMigration": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/darkn",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/darkn/GolandProjects/simpleChatClient/main.go",
+    "settings.editor.selected.configurable": "junie.allowlist",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\Users\\darkn\\GolandProjects\\simpleChatClient\\chat-client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\darkn\GolandProjects\simpleChatClient" />
     </key>
   </component>
-  <component name="RunManager" selected="Playwright.vue.spec.ts">
-    <configuration name="go build server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="simpleChatClient" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="simpleChatClient" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/server.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.server_test.go (1)">
+    <configuration name="TestStartWebSocketServer_RemovesClientWhenSendWouldBlock in simpleChatClient" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="simpleChatClient" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
@@ -100,7 +98,16 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestStartWebSocketServer_BroadcastToAllActiveClients\E$" />
+      <pattern value="^\QTestStartWebSocketServer_RemovesClientWhenSendWouldBlock\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server_test.go (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="simpleChatClient" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/server_test.go" />
+      <framework value="gotest" />
       <method v="2" />
     </configuration>
     <configuration name="server_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -135,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.server_test.go (1)" />
+        <item itemvalue="Go Test.TestStartWebSocketServer_RemovesClientWhenSendWouldBlock in simpleChatClient" />
         <item itemvalue="Playwright.vue.spec.ts" />
         <item itemvalue="Playwright.websocket chat relays messages between two clients" />
         <item itemvalue="Go Test.server_test.go" />
-        <item itemvalue="Go Build.go build server.go" />
-        <item itemvalue="Go Test.TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +192,8 @@
     <MESSAGE value="Add some more tests" />
     <MESSAGE value="Add e2e test" />
     <MESSAGE value="Add CI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add CI" />
+    <MESSAGE value="Test CI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test CI" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

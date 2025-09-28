@@ -132,21 +132,19 @@ func (client *Client) write() {
 	}()
 
 	for {
-		select {
-		case message, ok := <-client.Send:
-			if !ok {
-				err := client.Socket.WriteMessage(websocket.CloseMessage, []byte{})
-				if err != nil {
-					fmt.Printf("Error writing close message to web socket%v", err)
-					return
-				}
-			}
-
-			err := client.Socket.WriteMessage(websocket.TextMessage, message)
+		message, ok := <-client.Send
+		if !ok {
+			err := client.Socket.WriteMessage(websocket.CloseMessage, []byte{})
 			if err != nil {
-				fmt.Printf("Error writing to web socket %v to client %v", err, client.Id)
+				fmt.Printf("Error writing close message to web socket%v", err)
 				return
 			}
+		}
+
+		err := client.Socket.WriteMessage(websocket.TextMessage, message)
+		if err != nil {
+			fmt.Printf("Error writing to web socket %v to client %v", err, client.Id)
+			return
 		}
 	}
 }

@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Add some more tests">
+    <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Add e2e test">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-client/e2e/vue.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-client/e2e/vue.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-client/playwright.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-client/playwright.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat-client/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-client/public/favicon.ico" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +29,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Duplicate message fixing" />
-        <option name="rewordedMessage" value="Duplicate message fixing" />
+        <option name="originalMessage" value="Add e2e test" />
+        <option name="rewordedMessage" value="Add e2e test" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="71a3885be92cf09c243bd7406d8331613bc5a3c3" />
+    <option name="onto" value="af895e61836f147f37a546ab447bd259e83db3f8" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -50,39 +48,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "Go Build.go build simpleChatClient.executor": "Debug",
-    "Go Test.TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient.executor": "Debug",
-    "Go Test.TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient.executor": "Run",
-    "Go Test.server_test.go.executor": "Coverage",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Playwright.vue.spec.ts.executor": "Run",
-    "Playwright.websocket chat relays messages between two clients.executor": "Debug",
-    "RunOnceActivity.GoLinterPluginOnboarding": "true",
-    "RunOnceActivity.GoLinterPluginStorageMigration": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "go.import.settings.migrated": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/darkn",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/darkn/GolandProjects/simpleChatClient/main.go",
-    "settings.editor.selected.configurable": "junie.allowlist",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Users\\darkn\\GolandProjects\\simpleChatClient\\chat-client\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;Go Build.go build simpleChatClient.executor&quot;: &quot;Debug&quot;,
+    &quot;Go Test.TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient.executor&quot;: &quot;Debug&quot;,
+    &quot;Go Test.TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient.executor&quot;: &quot;Run&quot;,
+    &quot;Go Test.server_test.go.executor&quot;: &quot;Coverage&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Playwright.vue.spec.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Playwright.websocket chat relays messages between two clients.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.GoLinterPluginOnboarding&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.GoLinterPluginStorageMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/darkn&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/darkn/GolandProjects/simpleChatClient/main.go&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;junie.allowlist&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\darkn\\GolandProjects\\simpleChatClient\\chat-client\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\darkn\GolandProjects\simpleChatClient" />
@@ -189,7 +187,8 @@
     <MESSAGE value="Simple web socket server" />
     <MESSAGE value="Add some tests" />
     <MESSAGE value="Add some more tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add some more tests" />
+    <MESSAGE value="Add e2e test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add e2e test" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
@@ -219,7 +218,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/chat-client/e2e/vue.spec.ts</url>
-          <line>70</line>
+          <line>66</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>

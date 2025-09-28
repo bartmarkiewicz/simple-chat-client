@@ -6,20 +6,17 @@ import (
 	"time"
 )
 
-//TIP <p>To run your code, right-click the code and select <b>Run</b>.</p> <p>Alternatively, click
-// the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.</p>
-
 func main() {
 	fmt.Println("Starting web socket server")
 	clientManager := NewClientManager()
 
 	go clientManager.StartWebSocketServer()
 
-	http.HandleFunc("/ws", clientManager.WebsocketPage)
+	http.HandleFunc("/web-socket", clientManager.WebsocketPage)
 
 	server := &http.Server{
 		Addr:              ":8080",
-		ReadHeaderTimeout: 60 * time.Second,
+		ReadHeaderTimeout: 30 * time.Second,
 	}
 
 	err := server.ListenAndServe()

@@ -14,7 +14,7 @@ type ServerMessage = {
   }
 }
 
-export function useWebSocketConnection(url = 'ws://localhost:12345/ws') {
+export function useWebSocketConnection(url = 'ws://localhost:12345/web-socket') {
   const websocket = ref<WebSocket | null>(null)
   const connectionReady = ref(false)
   const connectionError = ref(false)

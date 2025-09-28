@@ -21,7 +21,7 @@ import { ref } from 'vue'
 import { type ChatMessage, useWebSocketConnection } from '@/websocket.ts'
 
 const { connectionReady, connectionError, messages, send } =
-  useWebSocketConnection('ws://localhost:8080/ws')
+  useWebSocketConnection('ws://localhost:8080/web-socket')
 
 const chatBox = ref('')
 

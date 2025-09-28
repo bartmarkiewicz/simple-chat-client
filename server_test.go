@@ -204,7 +204,7 @@ func TestSend_SkipsCurrentClient(t *testing.T) {
 
 func TestWebsocketPage_ReturnsNotFoundOnUpgradeFailure(t *testing.T) {
 	clientManager := NewClientManager()
-	req := httptest.NewRequest("GET", "/ws", nil)
+	req := httptest.NewRequest("GET", "/web-socket", nil)
 	rr := httptest.NewRecorder()
 
 	clientManager.WebsocketPage(rr, req)

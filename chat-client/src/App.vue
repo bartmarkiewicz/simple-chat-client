@@ -1,85 +1,111 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <section class="chat">
+    <ul id="messages">
+      <li v-for="(message, idx) in messages" :key="idx">
+        <strong> Sender: {{ message.sender }}</strong>
+        {{message.text}}
+        <div :class="{ system: message.role === 'SYSTEM' }">{{ message.text }}</div>
+      </li>
+    </ul>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <form @submit.prevent="sendChatMessage" class="composer" v-if="connectionReady">
+      <input
+        v-model="chatBox"
+        autocomplete="off"
+        placeholder="Type a message..."
+      />
+      <button type="submit">Send</button>
+    </form>
+    <div v-else-if="!connectionReady && !connectionError">
+      Connecting...
     </div>
-  </header>
-
-  <RouterView />
+    <div v-else>
+      Connection Error Please Refresh Page
+    </div>
+  </section>
 </template>
 
+<script setup lang="ts">
+import {onMounted, ref} from "vue";
+import {type ChatMessage, useWebSocketConnection} from "@/websocket.ts";
+
+const { connectionReady, connectionError, messages, send, connect }
+  = useWebSocketConnection("ws://localhost:8080/ws");
+
+const chatBox = ref("");
+
+function sendChatMessage() {
+  const text = chatBox.value.trim();
+  if (!text) return;
+  const chatMessage: ChatMessage = {
+    text,
+    role: "USER",
+  }
+  send(chatMessage);
+  chatBox.value = "";
+}
+
+onMounted(() => {
+  connect()
+});
+
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.chat {
+  max-width: 640px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+#messages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  min-height: 200px;
+  max-height: 50vh;
+  overflow: auto;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+#messages li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+#messages li:last-child {
+  border-bottom: none;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.system {
+  font-weight: 700; /* System messages in bold */
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.composer {
+  display: flex;
+  gap: 8px;
 }
 
-nav a:first-of-type {
-  border: 0;
+.composer input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.composer button {
+  padding: 8px 14px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.composer button:hover {
+  background: #2563eb;
 }
 </style>

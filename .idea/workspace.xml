@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3b2a59b2-1d4e-4c75-97d0-dc1afdfb7abd" name="Changes" comment="Add some more tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-client/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/server_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-client/e2e/vue.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-client/e2e/vue.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-client/playwright.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-client/playwright.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/chat-client/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +58,8 @@
     "Go Test.TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient.executor": "Run",
     "Go Test.server_test.go.executor": "Coverage",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Playwright.vue.spec.ts.executor": "Run",
+    "Playwright.websocket chat relays messages between two clients.executor": "Debug",
     "RunOnceActivity.GoLinterPluginOnboarding": "true",
     "RunOnceActivity.GoLinterPluginStorageMigration": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -84,7 +88,7 @@
       <recent name="C:\Users\darkn\GolandProjects\simpleChatClient" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.server_test.go">
+  <component name="RunManager" selected="Playwright.vue.spec.ts">
     <configuration name="go build server.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="simpleChatClient" />
       <working_directory value="$PROJECT_DIR$" />
@@ -92,15 +96,6 @@
       <package value="simpleChatClient" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/server.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build simpleChatClient" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="simpleChatClient" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="simpleChatClient" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -114,17 +109,6 @@
       <pattern value="^\QTestStartWebSocketServer_BroadcastToAllActiveClients\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="simpleChatClient" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="simpleChatClient" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers\E$" />
-      <method v="2" />
-    </configuration>
     <configuration name="server_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="simpleChatClient" />
       <working_directory value="$PROJECT_DIR$" />
@@ -134,13 +118,34 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <configuration name="vue.spec.ts" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/chat-client/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$/chat-client" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/chat-client/e2e/vue.spec.ts" />
+      <method v="2" />
+    </configuration>
+    <configuration name="websocket chat relays messages between two clients" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/chat-client/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$/chat-client" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/chat-client/e2e/vue.spec.ts" />
+      <test-names>
+        <test-name value="websocket chat relays messages between two clients" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Playwright.vue.spec.ts" />
+        <item itemvalue="Playwright.websocket chat relays messages between two clients" />
         <item itemvalue="Go Test.server_test.go" />
         <item itemvalue="Go Build.go build server.go" />
         <item itemvalue="Go Test.TestStartWebSocketServer_BroadcastToAllActiveClients in simpleChatClient" />
-        <item itemvalue="Go Test.TestStartWebSocketServer_UnregisterRemovesAndNotifiesOthers in simpleChatClient" />
-        <item itemvalue="Go Build.go build simpleChatClient" />
       </list>
     </recent_temporary>
   </component>
@@ -211,6 +216,12 @@
           <url>file://$PROJECT_DIR$/server.go</url>
           <line>59</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/chat-client/e2e/vue.spec.ts</url>
+          <line>70</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

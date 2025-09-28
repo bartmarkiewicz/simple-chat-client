@@ -1,13 +1,13 @@
 <template>
   <section class="chat">
-    <ul id="messages">
+    <ul>
       <li v-for="(message, idx) in messages" :key="idx">
         <strong> Sender: {{ message.sender }}</strong>
         <div :class="{ system: message.role === 'SYSTEM' }">{{ message.text }}</div>
       </li>
     </ul>
 
-    <form @submit.prevent="sendChatMessage" class="composer" v-if="connectionReady">
+    <form @submit.prevent="sendChatMessage" class="form-input" v-if="connectionReady">
       <input
         v-model="chatBox"
         autocomplete="off"
@@ -81,19 +81,19 @@ function sendChatMessage() {
   font-weight: 700; /* System messages in bold */
 }
 
-.composer {
+.form-input {
   display: flex;
   gap: 8px;
 }
 
-.composer input {
+.form-input input {
   flex: 1;
   padding: 8px 10px;
   border: 1px solid #d0d0d0;
   border-radius: 6px;
 }
 
-.composer button {
+.form-input button {
   padding: 8px 14px;
   border: none;
   background: #3b82f6;
@@ -102,7 +102,7 @@ function sendChatMessage() {
   cursor: pointer;
 }
 
-.composer button:hover {
+.form-input button:hover {
   background: #2563eb;
 }
 </style>
